@@ -1,4 +1,6 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react';
+import axios from "axios";
+
 
 //components
 import EntertainmentCardSlider from "../components/Entertainment/EntertainmentCard.component"
@@ -9,10 +11,21 @@ import PosterSlider from "../components/PosterSlider/PosterSlider.component"
 import DefaultLayoutHoc from '../layout/Default.layout'
 
 
+
 const HomePage = () => {
   const [recommendedMovies, setRecommendedMovies] = useState([]);
   const [premierMovies, setPremierMovies] = useState([]);
   const [onlineStreamEvents, setOnlineStreamevents] = useState([]);
+
+  useEffect(() => {
+    const requestTopRatedMovies = async() => {
+      const getTopRatedMovies = await axios.get(
+        'https://api.themoviedb.org/3/movie/top_rated?api_key=5d96e66a3e93eb8357a370abecc272fe')
+        setPremierMovies(getTopRatedMovies.data.results);
+      };
+  
+      requestTopRatedMovies();
+    }, []);
 
   return (
    <>
@@ -27,7 +40,7 @@ const HomePage = () => {
 
    <div className="container mx-auto px-4 md:px-12 my-8">
     <PosterSlider title="Recommended Movies"
-    subject="List of recommended movies"
+    subtitle="List of recommended movies"
     posters={recommendedMovies}
     isDark={false}/>
    </div>
@@ -39,7 +52,7 @@ const HomePage = () => {
         alt="Rupay" className="w-full h-full" />
       </div>
         <PosterSlider title="Premiers"
-        subject="Brand New Releases Every Firday"
+        subtitle="Brand New Releases Every Firday"
         posters={premierMovies}
         isDark={true}/>
       </div>
@@ -47,7 +60,7 @@ const HomePage = () => {
 
     <div className="container mx-auto px-4 md:px-12 my-8">
     <PosterSlider title="Online Streaming Event"
-        subject=""
+        subtitle=""
         posters={onlineStreamEvents}
         isDark={false}/>
     </div>
