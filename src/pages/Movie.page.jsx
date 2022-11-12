@@ -188,7 +188,7 @@ const MoviePage = () => {
           <hr />
         </div>
 
-        {/* recommended movies slider */}
+        {/* recommended movies slider */} 
         <PosterSlider
           config={settings}
           title="BMS XCLUSICE"
