@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PaymentModel from "../PaymentModal/Payment.Component";
+import PaymentModel from "../PaymentModal/Payment.component";
 import { MovieContext } from "../../context/Movie.context";
 
 const MovieInfo = ({ movie }) => {
