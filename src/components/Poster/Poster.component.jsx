@@ -34,7 +34,7 @@ const MoviePoster = (props) => {
 const PlayPoster = (props) => {
   return (
     <a
-      href="https://in.bookmyshow.com/events/so-rude-of-me-by-swati-sachdeva/ET00331405"
+      href="https://assets-in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-blue-mic-comedy-nights-0-2022-11-10-t-13-44-56.jpg"
       target="_blank"
       rel="noreferrer"
     >

@@ -16,7 +16,7 @@ const MovieInfo = ({ movie }) => {
         </h1>
         <div className="flex  flex-col gap-2 text-white">
           <h4>4k rating</h4>
-          <h4>English, Hindi, Kannada, Tamil, Telgu</h4>
+          <h4>English, Hindi, Kannada, Tamil, Telegu</h4>
           <h4>
             {movie.runtime} min | {genres}
           </h4>
